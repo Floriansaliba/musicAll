@@ -1,0 +1,36 @@
+extends layout.pug
+
+block content
+    if user
+        .welcome-message
+            h2.title Bienvenue #{user.firstname} !
+            .search 
+                h2.title Recherche tes musiques préférées : 
+                form(action="/search")
+                    input(type="text", name="search", placeholder="Rechercher").input-text
+                    input(type="submit", value="Trouver").input-submit
+    if !user
+         .welcome-message
+            h2.title Avec MusicAll, retrouvez vos artistes et musiques préférés. 
+            h2.title Inscrivez-vous ou connectez-vous pour accéder à vos playlists
+    if results 
+        .results-container
+            each result in results
+                .result(id=result.id)
+                    img(src=result.album.cover_medium, alt=result.title).result-image
+                    audio.audio(src=result.preview, controls) 
+                    h3.title= result.title
+                    p.artist= result.artist.name
+                    button.save(id=result.id) Enregistrer
+
+    - var messages = getMessages()
+
+    // Affichage des messages flash
+    if messages.notify
+        each msg in messages.notify
+               .notification= msg
+    if messages.error
+        each msg in messages.error
+            .error= msg
+
+    script(src=process.env.BROWSER_REFRESH_URL)

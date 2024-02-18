@@ -1,0 +1,29 @@
+extends layout.pug
+
+block content
+    .welcome-message
+            h2.title Créer une playlist : 
+    form.playlist-form(action="/my-playlists/add", method='post') 
+                input.input-text(type='text', placeholder='playlist', name='playlist')
+                input.input-submit-playlist(type='submit', value='Créer')
+    if user
+        .welcome-message
+            h2.title Mes Playlists : 
+
+    if playLists
+        .playlists
+            each playlist in playLists
+                .frame
+                    a(href="/my-playlists/" + playlist.id).playlist-link
+                        .playlist= playlist.name
+                    button.closeBtn(id=playlist.id) X
+    else
+        .welcome-message
+            h2.title Aucune playlist créée
+            
+  
+
+
+
+
+    script(src=process.env.BROWSER_REFRESH_URL)

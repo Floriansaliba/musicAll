@@ -1,0 +1,31 @@
+html
+    block head
+        head
+            title Top Music
+            link(rel="preconnect" href="https://fonts.googleapis.com")
+            link(rel="preconnect" href="https://fonts.gstatic.com" crossorigin)
+            link(href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet")
+            link(rel='stylesheet', href='/style/style.css')
+            script(src='/script/main.js' defer)
+        body
+            block header
+                #header
+                    img(src="/images/logo.jpg", alt="Top Music Logo")#logo
+                    nav#nav
+                        div.nav-item
+                            a(href="/") Accueil
+                        if user 
+                            div.nav-item 
+                                a(href="/my-playlists") Mes playlists
+                            div.nav-item 
+                                a(href="/my-musics") Mes musiques
+                            div.nav-item 
+                                a(href="/logout") Deconnexion
+                        else 
+                            div.nav-item 
+                                a(href="/subscribe") Inscription
+                            div.nav-item 
+                                a(href="/login") Connexion 
+                    
+            block content
+            script(src=process.env.BROWSER_REFRESH_URL)

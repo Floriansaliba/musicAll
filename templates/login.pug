@@ -1,0 +1,10 @@
+extends layout.pug
+
+
+block content
+    form.form(action="/login", method="post") 
+        input(type="text", name="email", placeholder="Email").input-text
+        input(type="password", name='password', placeholder="Mot de passe").input-text
+        input(type="submit", value="Se connecter").input-submit
+
+    script(src=process.env.BROWSER_REFRESH_URL)

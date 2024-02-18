@@ -1,0 +1,24 @@
+extends layout.pug
+
+
+block content
+    if musics.length > 0
+        .welcome-message
+            h2.title Voici vos musiques :
+            .results-container
+                each music in musics
+                    .result
+                        img(src=music.imagePath, alt=music.title).music-image
+                        audio.audio(src=music.audioPath, controls) 
+                        h3.title= music.title
+                        p.artist= music.artist
+                        button.delete-from-playlist(id=music.id) Supprimer de la playlist
+    else
+        .welcome-message
+            h2.title Votre playlist est vide ! 
+
+
+
+    script(src=process.env.BROWSER_REFRESH_URL)
+
+

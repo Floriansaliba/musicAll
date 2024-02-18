@@ -1,0 +1,34 @@
+extends layout.pug
+
+block content
+    if user
+        .welcome-message
+            h2.title Mes musiques : 
+
+    if user.likes
+        .results-container
+            each result in user.likes
+                .result
+                    img(src=result.imagePath, alt=result.title).result-image
+                    audio.audio(src=result.audioPath, controls) 
+                    h3.title= result.title
+                    p.artist= result.artist
+                    button.delete(id=result.id) Supprimer
+                    select
+                        option  ----Ajouter à une playlist----
+                        each playlist in user.playLists
+                            option(value=playlist.name, id=playlist.id)= playlist.name
+                    button.add Ajouter
+
+    - var messages = getMessages()
+
+    // Affichage des messages flash
+    if messages.notify
+        each msg in messages.notify
+               .notification= msg
+    if messages.error
+        each msg in messages.error
+            .error= msg
+
+
+    script(src=process.env.BROWSER_REFRESH_URL)

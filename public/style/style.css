@@ -1,0 +1,220 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+}
+
+#header {
+  background-color: rgb(35, 32, 32);
+  padding-left: 3%;
+  padding-right: 3%;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#nav {
+  color: white;
+  display: flex;
+  flex-direction: row;
+}
+
+.nav-item {
+  list-style-type: none;
+}
+
+.nav-item > a {
+  text-decoration: none;
+  color: white;
+  padding: 10px;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.nav-item > a:hover {
+  background-color: white;
+  color: black;
+  border-radius: 20%;
+  cursor: pointer;
+}
+
+#logo {
+  width: 100px;
+  height: 100px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  margin: auto;
+  margin-top: 50px;
+}
+
+.input-text {
+  margin: 5px;
+  border-radius: 10px;
+  border: solid 2px rgb(9, 9, 9);
+  padding: 5px;
+}
+
+.input-submit {
+  margin: 5px;
+  background-color: rgb(207, 90, 90);
+  color: white;
+  padding: 5px;
+  border: solid black 2px;
+  font-weight: bold;
+}
+
+.input-submit-playlist {
+  margin: 5px;
+  background-color: rgb(207, 90, 90);
+  color: white;
+  padding: 5px;
+  border: solid black 2px;
+  font-weight: bold;
+}
+
+.input-submit:hover {
+  color: rgb(207, 90, 90);
+  background-color: white;
+  border: solid rgb(207, 90, 90) 2px;
+  cursor: pointer;
+}
+
+.result-image {
+  width: auto;
+  height: auto;
+}
+
+.results-container {
+  width: 94%;
+  padding-left: 3%;
+  padding-right: 3%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  margin-top: 100px;
+}
+
+.result {
+  display: flex;
+  flex-direction: column;
+  padding: 5px;
+  background-color: rgb(35, 32, 32);
+  color: white;
+  border-radius: 5px;
+  margin-bottom: 50px;
+}
+
+.welcome-message {
+  width: 94%;
+  padding-left: 3%;
+  padding-right: 3%;
+  margin-top: 100px;
+}
+
+.audio {
+  height: 20px;
+}
+
+.delete {
+  background-color: red;
+  color: white;
+}
+
+.delete-from-playlist {
+  background-color: red;
+  color: white;
+}
+
+.frame {
+  position: relative;
+  width: 200px;
+  margin: 30px;
+  display: flex;
+  flex-direction: column;
+}
+
+.playlist {
+  width: 200px;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  background-image: url(/images/logo.jpg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  box-shadow: 10px 5px 5px rgb(27, 143, 23);
+}
+
+.playlist-link {
+  width: 200px;
+  height: 200px;
+  position: relative;
+  text-decoration: none;
+  color: rgb(27, 143, 23);
+  font-weight: bold;
+  font-size: 30px;
+  text-transform: uppercase;
+  margin: 30px 30px 0px 30px;
+  box-shadow: 10px 5px 5px rgb(27, 143, 23);
+  border-radius: 10px;
+}
+
+.playlists {
+  width: 94%;
+  padding-left: 3%;
+  padding-right: 3%;
+  margin-top: 100px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.playlist:hover {
+  box-shadow: 5px 2px 2px rgb(27, 143, 23);
+}
+
+.add {
+  background-color: blue;
+  color: white;
+}
+
+.closeBtn {
+  background-color: black;
+  color: white;
+  width: 30px;
+  height: 30px;
+  border-radius: 5px;
+  position: absolute;
+  top: 30px;
+  right: -30px;
+}
+
+.notification {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background-color: rgb(71, 71, 143);
+  color: white;
+  padding: 10px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  margin-right: 10px;
+}
+
+.playlist-form {
+  padding-left: 3%;
+  margin-top: 30px;
+}
